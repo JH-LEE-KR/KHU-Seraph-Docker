@@ -1,0 +1,2 @@
+Test file for docker volume, which share django DB.
+- Directory O
