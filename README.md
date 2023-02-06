@@ -50,6 +50,10 @@ USERTYPE_OTHERS = 'Others'
 
 ## Run
 ```
+bash run.sh
+
+or
+
 docker build -t seraph/django .
 docker build -t seraph/nginx .
 docker-compose up -d --build
