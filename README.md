@@ -2,7 +2,7 @@
 
 
 ## Prerequisite
-- KHU_Seraph_django/secret.json
+- django/secret.json
 ```
 {
     "SECRET_KEY": <Your Django Secret Key>,
@@ -12,7 +12,7 @@
 ```
 
 
-- KHU_Seraph_django/global_vars.py
+- django/global_vars.py
 ```
 IPS = [
     <IP addreses of each node>
