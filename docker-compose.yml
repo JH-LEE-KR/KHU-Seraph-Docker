@@ -4,7 +4,7 @@ services:
     nginx:
         container_name: nginx
         build: ./nginx
-        image: test/nginx
+        image: seraph/nginx
         restart: always
         ports:
           - "60080:80"
@@ -21,7 +21,7 @@ services:
     django:
         container_name: django
         build: ./django
-        image: test/django
+        image: seraph/django
         restart: always
         command: uwsgi --ini uwsgi.ini
         environment: 
