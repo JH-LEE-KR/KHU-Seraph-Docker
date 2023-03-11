@@ -3,7 +3,7 @@ services:
 
     nginx:
         container_name: nginx
-        build: ./nginx
+        build: ./KHU_Seraph_nginx
         image: seraph/nginx
         restart: always
         ports:
@@ -11,7 +11,7 @@ services:
         extra_hosts:
           - "host.docker.internal:host-gateway"
         volumes:
-          - ./django:/docker-server/seraph-web
+          - ./KHU_Seraph_django:/docker-server/seraph-web
           - ./log:/var/log/nginx
         depends_on:
           - django
@@ -20,12 +20,12 @@ services:
 
     django:
         container_name: django
-        build: ./django
+        build: ./KHU_Seraph_django
         image: seraph/django
         restart: always
         command: uwsgi --ini uwsgi.ini
         environment: 
           - TZ=Asia/Seoul
         volumes:
-          - ./django:/docker-server/seraph-web
+          - ./KHU_Seraph_django:/docker-server/seraph-web
           - ./log:/var/log/uwsgi

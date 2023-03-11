@@ -22,7 +22,5 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Run django application on the port 8080
 # EXPOSE 8080
 
-# Run the django application
-# CMD ["bash", "-c", "python manage.py collectstatic --settings=BACKEND.settings.deploy --no-input && python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8080"]
-# ENTRYPOINT ["bash", "-c", "python manage.py makemigrations && python manage.py migrate"]
+# Modify the django hasher code for our custom hasher
 RUN sed -i '163s/.*/        algorithm = encoded.split("$")[1 if encoded.startswith("$") else 0]/' /usr/local/lib/python3.8/site-packages/django/contrib/auth/hashers.py

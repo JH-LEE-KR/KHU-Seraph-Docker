@@ -2,7 +2,7 @@
 
 
 ## Prerequisite
-- django/secret.json
+- KHU_Seraph_django/secret.json
 ```
 {
     "SECRET_KEY": <Your Django Secret Key>,
@@ -12,7 +12,7 @@
 ```
 
 
-- django/global_vars.py
+- KHU_Seraph_django/global_vars.py
 ```
 IPS = [
     <IP addreses of each node>
@@ -50,10 +50,6 @@ USERTYPE_OTHERS = 'Others'
 
 ## Run
 ```
-bash run.sh
-
-or
-
 docker build -t seraph/django .
 docker build -t seraph/nginx .
 docker-compose up -d --build
